@@ -84,7 +84,7 @@ function [ vout ] = load_image_data( files, varargin )
     end
     function cropped=cropImage(image, cropsize)
         sz=size(image);
-        corner1=(sz(1:2)-cropsize)/2+[1 1];
+        corner1=floor((sz(1:2)-cropsize)/2+[1 1]);
         corner2=corner1+cropsize-[1 1];
         cropped=image(corner1(1):corner2(1),corner1(2):corner2(2));
     end
